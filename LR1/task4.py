@@ -12,7 +12,6 @@ height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 fourcc = cv2.VideoWriter_fourcc(*'mp4v')
 out = cv2.VideoWriter('output_1.mov', fourcc, 30.0, (width, height))
 
-# чтение видеофайла кадр за кадром и запись его в другой файл
 while cap.isOpened():
     ret, frame = cap.read()
     if ret:
