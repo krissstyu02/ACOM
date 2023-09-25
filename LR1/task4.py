@@ -10,7 +10,7 @@ height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
 # создание объект VideoWriter для записи видео в файл
 fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-out = cv2.VideoWriter('output_1.mov', fourcc, 30.0, (width, height))
+out = cv2.VideoWriter('output_4.mov', fourcc, 30.0, (width, height))
 
 while cap.isOpened():
     ret, frame = cap.read()

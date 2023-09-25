@@ -19,7 +19,7 @@ while cap.isOpened():
         lab = cv2.cvtColor(frame, cv2.COLOR_BGR2LAB)
 
         # отображение кадра в окне
-        cv2.imshow('Video',gray)
+        cv2.imshow('Video',vsh)
 
         # выход при нажатии клавиши 'esc'
         if cv2.waitKey(1) & 0xFF == 27:

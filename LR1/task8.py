@@ -29,8 +29,8 @@ x2_2 = width // 2 + rect_height_2 // 2
 y2_2 = height // 2 + rect_width_2 // 2
 
 # Отрисовка прямоугольников на изображении
-cv2.rectangle(img, (x1_1, y1_1), (x2_1, y2_1), color, thickness)
-cv2.rectangle(img, (x1_2, y1_2), (x2_2, y2_2), color, thickness)
+# cv2.rectangle(img, (x1_1, y1_1), (x2_1, y2_1), color, thickness)
+# cv2.rectangle(img, (x1_2, y1_2), (x2_2, y2_2), color, thickness)
 
 # Размер ядра для размытия
 kernel_size = (71, 11)
