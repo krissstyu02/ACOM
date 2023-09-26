@@ -1,0 +1,4 @@
+﻿  gauss.cpp
+C:\Users\Кристина\PycharmProjects\ACIOM\LR3\c++\gauss\gauss\gauss.cpp(45,32): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Кристина\PycharmProjects\ACIOM\LR3\c++\gauss\gauss\gauss.cpp(46,34): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  gauss.vcxproj -> C:\Users\Кристина\PycharmProjects\ACIOM\LR3\c++\gauss\x64\Debug\gauss.exe
