@@ -61,14 +61,23 @@ vector<vector<double>> gaussianBlur(vector<vector<double>>& img, int kernel_size
 }
 
 int main() {
-    vector<vector<double>> img = { {1.0, 2.0, 3.0, 4.0, 5.0},
-                                   {6.0, 7.0, 8.0, 9.0, 10.0},
-                                   {11.0, 12.0, 13.0, 14.0, 15.0},
-                                   {16.0, 17.0, 18.0, 19.0, 20.0},
-                                   {21.0, 22.0, 23.0, 24.0, 25.0} };
+    vector<vector<double>> img = { {1.0, 4.0, 7.0, 4.0, 1.0},
+                                   {4.0, 16.0, 26.0, 16.0, 4.0},
+                                   {7.0, 26.0, 41.0, 26.0, 7.0},
+                                   {4.0, 16.0, 26.0, 16.0, 4.0},
+                                   {1.0, 4.0, 7.0, 4.0, 1.0} };
 
     int kernel_size = 5;
     double standard_deviation = 100.0;
+
+    cout << "matrix" << endl;
+    // вывод размытого изображения
+    for (const auto& row : img) {
+        for (const auto& pixel : row) {
+            cout << pixel << " ";
+        }
+        cout << endl;
+    }
 
     vector<vector<double>> img_blurred = gaussianBlur(img, kernel_size, standard_deviation);
     cout << "Result matrix"<<endl;

@@ -7,23 +7,23 @@ def main():
     img = cv2.imread("test4.jpg", cv2.IMREAD_GRAYSCALE)
     #стандартное отклонение
     standard_deviation = 100
-    # standard_deviation1 = 200
-    # standard_deviation2 = 50
+    standard_deviation1 = 200
+    standard_deviation2 = 50
 
     #размер ядра(матрицы)
     kernel_size = 5
-    # kernel_size1 = 3
-    # kernel_size2 = 7
+    kernel_size1 = 3
+    kernel_size2 = 7
 
     #размытие Гаусса (усредняет значения пикселей в соответствии с их расположением относительно центрального пикселя и весами)
     imgBlur_1 = AnotherGaussianBlur(img, kernel_size, standard_deviation)
-    # imgBlur_2 = AnotherGaussianBlur(img, kernel_size1, standard_deviation1)
-    # imgBlur_3 = AnotherGaussianBlur(img, kernel_size2, standard_deviation2)
+    imgBlur_2 = AnotherGaussianBlur(img, kernel_size1, standard_deviation1)
+    imgBlur_3 = AnotherGaussianBlur(img, kernel_size2, standard_deviation2)
 
     cv2.imshow('Original_image', img)
     cv2.imshow(str(kernel_size) + 'x' + str(kernel_size) + ' and deviation ' + str(standard_deviation), imgBlur_1)
-    # cv2.imshow(str(kernel_size1) + 'x' + str(kernel_size1) + ' and deviation ' + str(standard_deviation1), imgBlur_2)
-    # cv2.imshow(str(kernel_size2) + 'x' + str(kernel_size2) + ' and deviation ' + str(standard_deviation2), imgBlur_3)
+    cv2.imshow(str(kernel_size1) + 'x' + str(kernel_size1) + ' and deviation ' + str(standard_deviation1), imgBlur_2)
+    cv2.imshow(str(kernel_size2) + 'x' + str(kernel_size2) + ' and deviation ' + str(standard_deviation2), imgBlur_3)
 
 
 
@@ -46,7 +46,7 @@ def AnotherGaussianBlur(img, kernel_size, standard_deviation):
     for i in range(kernel_size):
         for j in range(kernel_size):
             kernel[i, j] = gauss(i, j, standard_deviation, a, b) # вычисление функции Гаусса для каждого элемента матрицы
-    print("Матрица ядра свертки:")
+    print("Матрица ядра свертки для ядра=",kernel_size)
     print(kernel)
 
     # Задание 2 - Нормализация полученной матрицы

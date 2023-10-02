@@ -16,7 +16,7 @@ def erode(image, kernel):
             # Вычисляем минимум среди пикселей внутри ядра, только если соответствующий элемент ядра равен 1
             eroded[i, j] = np.min(
               #создания подматрицы (подобласти) изображения вокруг текущего пикселя
-                image[i - hkm:i + hkm + 1, j - hkn:j + hkn + 1][kernel == 1])
+                image[i - hkm :i + hkm + 1, j - hkn :j + hkn + 1][kernel == 1])
 
     return eroded
 
