@@ -68,7 +68,7 @@ int main() {
                                    {1.0, 4.0, 7.0, 4.0, 1.0} };
 
     int kernel_size = 5;
-    double standard_deviation = 100.0;
+    double standard_deviation = 3.0;
 
     cout << "matrix" << endl;
     // вывод размытого изображения

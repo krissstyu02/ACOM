@@ -37,7 +37,7 @@ while True:
             width = height = int(np.sqrt(area))
             cv2.rectangle(frame,
                           # верхний левый угол
-                          (c_x - (width ), c_y - (height)),
+                          (c_x - (width), c_y - (height)),
                           # нижний правый угол
                           (c_x + (width), c_y + (height)),
                           (0, 0, 0), 2)
