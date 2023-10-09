@@ -92,3 +92,4 @@ standard_deviation = 50
 delta_thresh = 60
 min_area = 1000
 main(kernel_size, standard_deviation, delta_thresh, min_area)
+
