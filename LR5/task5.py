@@ -2,7 +2,6 @@ import cv2
 
 i = 0
 
-
 # Основная функция для обработки видео
 def main(kernel_size, standard_deviation, delta_thresh, min_area):
     global i
