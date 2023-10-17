@@ -15,6 +15,7 @@ from keras.models import load_model
 train_images = train_images.reshape((60000, 28, 28, 1))  # Добавляем размерность (1)-количество цветовых каналов(изображения черно-белые)
 test_images = test_images.reshape((10000, 28, 28, 1))
 
+
 # Нормализуем данные и переводим метки классов в формат one-hot encoding
 train_images = train_images.astype('float32') / 255  # Нормализуем значения пикселей до диапазона [0, 1]
 test_images = test_images.astype('float32') / 255
