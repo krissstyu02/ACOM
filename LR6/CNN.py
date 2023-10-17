@@ -1,8 +1,5 @@
-import keras
 from keras.datasets import mnist
-from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
-from keras.optimizers import Adam, SGD
 from keras.utils import to_categorical
 import time
 import numpy as np
@@ -89,7 +86,7 @@ results = []
 #         end_time = time.time()
 #         training_time = end_time - start_time
 #         #тестируем
-#         test_loss, test_accuracy = model.evaluate(test_images, test_labels)
+#         _,test_accuracy = model.evaluate(test_images, test_labels)
 #
 #         start_time = time.time()  # Засекаем начальное время обучения
 #         # Предсказания модели на тестовых данных
@@ -130,7 +127,7 @@ for params in params_to_try:
     for architecture in architectures:
         j+=1
         model=load_model(f'models/cnn_model{j}{i}.keras')
-        test_loss, test_accuracy = model.evaluate(test_images, test_labels)
+        _,test_accuracy = model.evaluate(test_images, test_labels)
 
         start_time = time.time()  # Засекаем начальное время обучения
         # Предсказания модели на тестовых данных

@@ -1,7 +1,5 @@
 import numpy as np
 from keras.datasets import mnist
-from keras.models import Sequential
-from keras.layers import Dense, Flatten
 from keras.utils import to_categorical
 import matplotlib.pyplot as plt
 import time
@@ -58,7 +56,7 @@ results = []
 #     # model.save(f'models/mlp_model{epochs}.keras')
 #
 #     # Оцениваем производительность на тестовых данных
-#     test_loss, test_accuracy = model.evaluate(test_images, test_labels)
+#     _,test_accuracy = model.evaluate(test_images, test_labels)
 #
 #     start_time = time.time()  # Засекаем начальное время обучения
 #     # Предсказания модели на тестовых данных
@@ -87,7 +85,7 @@ for epochs in epochs_list:
     model = load_model(f'models/mlp_model{epochs}.keras')
 
     # Оцениваем производительность на тестовых данных
-    test_loss, test_accuracy = model.evaluate(test_images, test_labels)
+    _,test_accuracy = model.evaluate(test_images, test_labels)
 
     start_time = time.time()  # Засекаем начальное время обучения
     # Предсказания модели на тестовых данных
