@@ -4,6 +4,8 @@ from keras.utils import to_categorical
 import matplotlib.pyplot as plt
 import time
 from keras.models import load_model
+from keras.models import Sequential
+from keras.layers import Dense, Flatten
 
 
 # Загрузим данные MNIST для обучения модели(train-изображения и метки для обучения,test-изображения и метки для тестирования)
@@ -22,9 +24,9 @@ test_labels = to_categorical(test_labels)
 
 # Используем разные значения количества эпох
 epochs_list = [5,10,15,20,25]
-results = []
 
-#для процесса обучения модели
+# results = []
+# # для процесса обучения модели
 # for epochs in epochs_list:
 #     model = Sequential()  #Последовательная модель
 #     #1 слой модели, используется для преобразования входных данных из формы (28, 28, 1) в одномерный вектор 28*28=784 элемента.
@@ -40,7 +42,7 @@ results = []
 #     #компиляция модели
 #     model.compile(optimizer='adam', #Оптимизатор Adam используется для настройки весов сети в процессе обучения
 #                   loss='categorical_crossentropy', #функция потерь, которая используется для оценки ошибки между предсказанными значениями и истинными метками
-#                   metrics=['accuracy']) #ирчночть-метрика, которая будет отслеживаться в процессе обучения для оценки производительности модели.
+#                   metrics=['accuracy']) #точность-метрика, которая будет отслеживаться в процессе обучения для оценки производительности модели.
 #
 #     start_time = time.time()
 #     # Обучаем модель и сохраняем историю обучения
@@ -52,34 +54,17 @@ results = []
 #     end_time = time.time()
 #     training_time = end_time - start_time
 #
+#     results.append((epochs, round(training_time, 4)))
+#
 #     # Сохранение модели
 #     # model.save(f'models/mlp_model{epochs}.keras')
 #
-#     # Оцениваем производительность на тестовых данных
-#     _,test_accuracy = model.evaluate(test_images, test_labels)
-#
-#     start_time = time.time()  # Засекаем начальное время обучения
-#     # Предсказания модели на тестовых данных
-#     predictions = model.predict(test_images)
-#     end_time = time.time()  # Засекаем конечное время обучения
-#     work_time=end_time-start_time
-#
-#     results.append((epochs, round(test_accuracy*100,2), round(training_time,2),round(work_time,4)))
-#
-#     # Выбираем случайное изображение для визуализации
-#     index = np.random.randint(0, len(test_images))
-#
-#     # Отображаем выбранное изображение
-#     plt.imshow(test_images[index].reshape(28, 28), cmap='gray')
-#     plt.title(f'Предсказание модели: {np.argmax(predictions[index])}')
-#     plt.show()
-#
-#
-# # Выводим последние значения в прцессе обучения
-# for epochs, accuracy,training_time,work_time in results:
-#     print(f"Эпох: {epochs}, Процент корректной работы на тестовых данных: {accuracy}%, "
-#           f"Скорость обучения:{training_time}, Скорость работы сети:{work_time}")
+# # Выводим значения в прцессе обучения
+# for epochs,training_time in results:
+#     print(f"Эпох: {epochs} "
+#           f"Скорость обучения:{training_time}")
 
+results=[]
 #вывод значений для сохраненных моделей
 for epochs in epochs_list:
     model = load_model(f'models/mlp_model{epochs}.keras')
