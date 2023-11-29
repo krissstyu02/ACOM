@@ -10,7 +10,7 @@ face_cascade = cv2.CascadeClassifier('Haar/haarcascade_frontalface_default.xml')
 
 # задание кодека и создание объекта VideoWriter для записи видео в файл
 fourcc = cv2.VideoWriter_fourcc(*'XVID')
-out = cv2.VideoWriter('haarscade_output_1.avi', fourcc, 20.0, (640, 480))
+out = cv2.VideoWriter('nowResults/haarscade_result.avi', fourcc, 20.0, (640, 480))
 
 # задание переменных для подсчета частоты потери изображения
 frame_count = 0

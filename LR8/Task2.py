@@ -13,7 +13,7 @@ net = cv2.dnn.readNetFromDarknet('YOLO/yolov3-face.cfg', 'YOLO/yolov3-wider_1600
 
 # задание кодека и создание объекта VideoWriter для записи видео в файл
 fourcc = cv2.VideoWriter_fourcc(*'XVID')
-res = cv2.VideoWriter('yolo_result.avi', fourcc, 20.0, (640, 480))
+res = cv2.VideoWriter('nowResults/yolo_result.avi', fourcc, 20.0, (640, 480))
 
 # задание переменных для подсчета частоты потери изображения
 frame_count = 0
